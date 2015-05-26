@@ -2,8 +2,9 @@ package Library;
 import java.util.Scanner;
 
 public class Library2 {
+	
 	static int minCustomers = 100;
-    static Book[] books = new Book[10];
+    static Book[] books = new Book[10]; //Number of books 
 	
 	//Create a scanner object each for text and numbers
 	private static Scanner tInput = new Scanner(System.in);
@@ -37,20 +38,21 @@ public class Library2 {
 	}
 	
 	
-/*	private static int addCustomer()
+private static int addCustomer()
 	{
+	
+	
+	return 0; 
 		
 		
-		
-		return 0;
-	} */
+	} 
 	
 	private static void addBooks()
 	{
 		for (int i = 0; i < books.length; i++ )
 		{
 			books[i] = new Book();
-			System.out.println("Enter a book name");
+			System.out.println("Enter a book name");// Asking for the Title of the book
 			books[i].setTitle(tInput.nextLine());
 			System.out.println("Who is the Author?");
 			books[i].setAuthor(tInput.nextLine());
@@ -69,14 +71,14 @@ public class Library2 {
 		System.out.println("Would you like to check out? 1 for yes, 2 for no");
 		yes = wantto.nextInt();
 		if (yes == 1){	
-				System.out.println("Which would you like to check out?1-7");
+				System.out.println("Which would you like to check out?1-7"); //Asking for which book you want to check out
 				int whichBook = check.nextInt();
 				if (books[whichBook].getCheckedOut() == false){
-				System.out.println("Checked Out!");
+					System.out.println(books[whichBook].getTitle() + " is now checked out");
 				books[whichBook].setCheckedOut(true);
 				
-					}
-			else{
+				}		else{//if the book is checked out say-
+				
 				System.out.println("Sorry, it is checked out");
 			}
 				}
